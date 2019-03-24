@@ -1,5 +1,3 @@
-﻿#include "pch.h"
-
 #include <iostream>
 #include <ctime>
 using namespace std;
@@ -12,8 +10,6 @@ int MatrixMult(int **a, const int n, int **b, int **c) {
 			bT[i][j] = b[j][i];
 		}
 	}
-#pragma omp parallel 
-#pragma omp for
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
 			c[i][j] = 0;
